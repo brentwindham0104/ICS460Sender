@@ -245,17 +245,17 @@ public class UDPClient {
 		int badPacketsPercentage = badPackets / 2;
 		
 		
-		int badPackets = (int) (percentBadPackets * 100);
-		int badPacketsPercentage = badPackets / 2;
+		int badPackets1 = (int) (percentBadPackets * 100);
+		int badPacketsPercentage1 = badPackets1 / 2;
 		
 		// corrupt packet
-		if(chance < badPacketsPercentage) {
+		if(chance < badPacketsPercentage1) {
 			condition = ERR;
 			return 1;
 
 		}
 		// drop packet
-		else if(chance > 100 - badPacketsPercentage) {
+		else if(chance > 100 - badPacketsPercentage1) {
 			condition = DROP;
 			return 0;
 		}
